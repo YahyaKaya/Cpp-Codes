@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    int bos=0;
+    srand(time(0));
+    int Nums[10] = {};
+    for(int i=0; i < 9; i++)
+    {
+         Nums[i] = rand()%101;
+         cout << Nums[i] << " ";
+    }
+    cout << endl;
+    for(int x=0; x<9; x++)
+    for(int y=0; y<10; y++)
+    {
+         if(Nums[x] < Nums[y])
+         {
+              bos = Nums[x];
+              Nums[x] = Nums[y];
+              Nums[y] = bos;
+          }
+     }
+     for(int z=0; z<9; z++)
+         cout << Nums[z] << " ";
+}
